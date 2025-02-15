@@ -88,6 +88,12 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  .pattern-grid-lg {
+    background-image: linear-gradient(currentColor 1px, transparent 1px),
+      linear-gradient(to right, currentColor 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
 }
 
 @layer base {
