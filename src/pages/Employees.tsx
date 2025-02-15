@@ -1,4 +1,3 @@
-
 import {
   Table,
   TableBody,
@@ -8,7 +7,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import { Employee } from "@/types";
 import { useState } from "react";
 
@@ -103,13 +102,101 @@ const employeeData: Employee[] = [
     joiningDate: "2023-04-15",
     status: "not_marked"
   },
-  // Add 10 more employees with similar structure
+  {
+    id: 11,
+    name: "Vihaan Malhotra",
+    email: "vihaan.malhotra@fr8.com",
+    position: "Data Analyst",
+    department: "Analytics",
+    joiningDate: "2023-05-15",
+    status: "not_marked"
+  },
+  {
+    id: 12,
+    name: "Ishaan Joshi",
+    email: "ishaan.joshi@fr8.com",
+    position: "Operations Manager",
+    department: "Operations",
+    joiningDate: "2023-06-01",
+    status: "not_marked"
+  },
+  {
+    id: 13,
+    name: "Zara Khan",
+    email: "zara.khan@fr8.com",
+    position: "UI Designer",
+    department: "Design",
+    joiningDate: "2023-06-15",
+    status: "not_marked"
+  },
+  {
+    id: 14,
+    name: "Advait Choudhury",
+    email: "advait.choudhury@fr8.com",
+    position: "System Administrator",
+    department: "IT",
+    joiningDate: "2023-07-01",
+    status: "not_marked"
+  },
+  {
+    id: 15,
+    name: "Saanvi Rao",
+    email: "saanvi.rao@fr8.com",
+    position: "Business Analyst",
+    department: "Analytics",
+    joiningDate: "2023-07-15",
+    status: "not_marked"
+  },
+  {
+    id: 16,
+    name: "Kabir Mehra",
+    email: "kabir.mehra@fr8.com",
+    position: "Quality Assurance",
+    department: "Engineering",
+    joiningDate: "2023-08-01",
+    status: "not_marked"
+  },
+  {
+    id: 17,
+    name: "Myra Iyer",
+    email: "myra.iyer@fr8.com",
+    position: "Customer Success",
+    department: "Support",
+    joiningDate: "2023-08-15",
+    status: "not_marked"
+  },
+  {
+    id: 18,
+    name: "Reyansh Shah",
+    email: "reyansh.shah@fr8.com",
+    position: "Mobile Developer",
+    department: "Engineering",
+    joiningDate: "2023-09-01",
+    status: "not_marked"
+  },
+  {
+    id: 19,
+    name: "Anvi Srinivasan",
+    email: "anvi.srinivasan@fr8.com",
+    position: "Technical Writer",
+    department: "Documentation",
+    joiningDate: "2023-09-15",
+    status: "not_marked"
+  },
+  {
+    id: 20,
+    name: "Dhruv Chopra",
+    email: "dhruv.chopra@fr8.com",
+    position: "Cloud Engineer",
+    department: "Infrastructure",
+    joiningDate: "2023-10-01",
+    status: "not_marked"
+  }
 ];
 
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyeVd89EskYlUVSXAEX6XDEnKcDDTt6m6GtPxYgzDMNGPenqGHdufKlf833mV3Tdu7L/exec";
+
 const updateAttendance = async (employeeId: number, status: "present" | "absent" | "late") => {
-  // Google Apps Script URL - replace with your deployed web app URL
-  const SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_URL";
-  
   const date = new Date().toISOString().split('T')[0];
   const time = new Date().toLocaleTimeString();
   
