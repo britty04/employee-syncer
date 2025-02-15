@@ -16,17 +16,19 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const navigate = useNavigate();
 
   const login = (username: string, password: string) => {
-    if (username === "admin" && password === "admin123") {
+    // Check for correct credentials (case-insensitive username)
+    if (username.toLowerCase() === "admin" && password === "admin123") {
       setUser({ username: "admin", role: "admin" });
-      toast.success("Logged in successfully");
+      toast.success("Welcome back, Admin!");
       navigate("/");
     } else {
-      toast.error("Invalid credentials");
+      toast.error("Invalid credentials. Use admin/admin123");
     }
   };
 
   const logout = () => {
     setUser(null);
+    toast.success("Logged out successfully");
     navigate("/login");
   };
 
